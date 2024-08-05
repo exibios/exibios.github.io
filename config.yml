@@ -28,7 +28,7 @@ menu:
           weight: 6
 
 params:
-    description: "Experienced Data Engineer with over 7 years in data architecture, pipeline development, and data analytics. Proficient in SQL, Python."
+    description: "BI Engineer | Data Engineer | Tech Lead"
     author: Franco Corona
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
@@ -68,8 +68,8 @@ params:
               url: data/
             - name: Photography
               url: photo/
-            #- name: Tags
-            #  url: tags/
+            - name: Resume
+              url: cv.pdf
             #- name: Archive
             #  url: archive/
             #- name: Blog
