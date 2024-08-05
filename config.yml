@@ -1,5 +1,5 @@
 baseURL: "https://pascalmichaillat.org/hugo-website/" 
-title: Moritz-Maria von Igelfeld
+title: Franco Corona
 paginate: 20
 theme: PaperMod
 
@@ -11,25 +11,25 @@ taxonomies:
 
 menu:
     main:
-        - name: Books
-          url: books/
+        - name: Curriculum Vitae
+          url: cv/
           weight: 5 
-        - name: Papers
-          url: papers/
+        - name: Photography
+          url: photo/
           weight: 2
         - name: Courses
           url: courses/
           weight: 3
-        - name: Data
-          url: data/
+        - name: Cooking
+          url: cooking/
           weight: 4 
         - name: Blog
           url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
           weight: 6
 
 params:
-    description: "I am a Professor of Philology at the Institute of Romance Philology in Regensburg, Germany. My research focuses mostly on Portuguese irregular verbs."
-    author: Moritz-Maria von Igelfeld
+    description: "Experienced Data Engineer with over 7 years in data architecture, pipeline development, and data analytics. Proficient in SQL, Python."
+    author: Franco Corona
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light
@@ -43,7 +43,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["books","courses","papers","data"]
+    MainSections: ["cv","photo","cooking","blog"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -54,11 +54,11 @@ params:
     profileMode:
           enabled: true
           title: Professor Dr von Igelfeld
-          subtitle: "I am a Professor in the Institute of Romance Philology at the University of Regensburg, Germany. My research focuses on Portuguese irregular verbs. I was a doctoral student of Professor Dr Dieter Vogelsang in Munich, and later a second assistant of Professor Walter Schoeffler-Henschell at the University of Wiesbaden."
+          subtitle: "Experienced Data Engineer with over 7 years in data architecture, pipeline development, and data analytics. Proficient in SQL, Python. Skilled in cloud services such as Google Cloud and AWS, with a strong ability to translate business requirements into effective data solutions. Excellent communicator and collaborator, adept at working with crossfunctional teams to drive datadriven decisionmaking."
           imageUrl: "picture.jpeg"
           imageWidth: 160
           imageHeight: 160
-          imageTitle: Moritz-Maria von Igelfeld
+          imageTitle: Franco Corona
           buttons:
             - name: Papers
               url: papers/
@@ -79,9 +79,9 @@ params:
         - name: CV
           url: cv.pdf
         - name: Email
-          url: mailto:moritz.maria.von.igelfeld@gmail.com
+          url: mailto:fcorona@outlook.com
         - name: Zoom
-          url: https://www.zoom.us/my/igelfeld
+          url: https://www.zoom.us
         - name: Location
           url: location/
         - name: Office Hours
@@ -89,13 +89,13 @@ params:
         - name: Google Scholar
           url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
         - name: GitHub
-          url: https://github.com/pmichaillat
+          url: https://github.com/exibios
         - name: Substack
           url: https://pmichaillat.substack.com
         - name: YouTube
           url: https://www.youtube.com/@alexandermccallsmithoffici9000
         - name: Twitter
-          url: https://twitter.com/McCallSmith
+          url: https://twitter.com/ocxs
 
     assets:
         disableScrollBarStyle: true
@@ -103,7 +103,7 @@ params:
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Moritz-Maria von Igelfeld"
+      text: "Franco Corona"
       icon: favicon.ico
       iconHeight: 18
 
