@@ -53,49 +53,51 @@ params:
     math: true
     profileMode:
           enabled: true
-          title: Professor Dr von Igelfeld
+          title: Franco Corona
           subtitle: "Experienced Data Engineer with over 7 years in data architecture, pipeline development, and data analytics. Proficient in SQL, Python. Skilled in cloud services such as Google Cloud and AWS, with a strong ability to translate business requirements into effective data solutions. Excellent communicator and collaborator, adept at working with crossfunctional teams to drive datadriven decisionmaking."
           imageUrl: "picture.jpeg"
           imageWidth: 160
           imageHeight: 160
           imageTitle: Franco Corona
           buttons:
-            - name: Papers
-              url: papers/
+            #- name: Papers
+            #  url: papers/
             - name: Courses
               url: courses/
             - name: Data
               url: data/
-            - name: Books
-              url: books/
-            - name: Tags
-              url: tags/
-            - name: Archive
-              url: archive/
-            - name: Blog
-              url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
+            - name: Photography
+              url: photo/
+            #- name: Tags
+            #  url: tags/
+            #- name: Archive
+            #  url: archive/
+            #- name: Blog
+            #  url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
 
     socialIcons:
         - name: CV
           url: cv.pdf
         - name: Email
           url: mailto:fcorona@outlook.com
-        - name: Zoom
-          url: https://www.zoom.us
-        - name: Location
-          url: location/
-        - name: Office Hours
-          url: officehours/
-        - name: Google Scholar
-          url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
+        #- name: Zoom
+        #  url: https://www.zoom.us
+        #- name: Location
+        #  url: location/
+        #- name: Office Hours
+        #  url: officehours/
+        #- name: Google Scholar
+        #  url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
         - name: GitHub
           url: https://github.com/exibios
-        - name: Substack
-          url: https://pmichaillat.substack.com
-        - name: YouTube
-          url: https://www.youtube.com/@alexandermccallsmithoffici9000
+        #- name: Substack
+        #  url: https://pmichaillat.substack.com
+        #- name: YouTube
+        #  url: https://www.youtube.com/@alexandermccallsmithoffici9000
         - name: Twitter
           url: https://twitter.com/ocxs
+        - name: LinkedIn
+          url: https://www.linkedin.com/in/fcoronah/
 
     assets:
         disableScrollBarStyle: true
