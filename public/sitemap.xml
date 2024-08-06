@@ -2,14 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/hugo-website/tags/bw/</loc>
+    <lastmod>2024-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/cu/</loc>
+    <lastmod>2024-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/photo/photof1/</loc>
+    <lastmod>2024-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/estadio-olimpico/</loc>
+    <lastmod>2024-06-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/hugo-website/</loc>
     <lastmod>2024-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/monochrome/</loc>
+    <lastmod>2024-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/photo/</loc>
+    <lastmod>2024-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/</loc>
+    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/unam/</loc>
+    <lastmod>2024-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/basketball/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/cancha/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/especular/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/reflejo/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/photo/photof2/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/reflexion/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hugo-website/location/</loc>
     <lastmod>2024-05-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hugo-website/officehours/</loc>
     <lastmod>2024-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/amanecer/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/photo/photof3/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/cielo/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/colores/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/hugo-website/tags/tenis/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hugo-website/data/</loc>
     <lastmod>2024-07-12T00:00:00+00:00</lastmod>
@@ -45,9 +102,6 @@
     <lastmod>2024-07-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hugo-website/tags/spanish/</loc>
-    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/hugo-website/tags/</loc>
     <lastmod>2024-07-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/hugo-website/tags/history-of-oil/</loc>

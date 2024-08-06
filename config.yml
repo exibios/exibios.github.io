@@ -13,19 +13,25 @@ menu:
     main:
         - name: Curriculum Vitae
           url: cv/
-          weight: 5 
+          weight: 1 
         - name: Photography
           url: photo/
           weight: 2
-        - name: Courses
-          url: courses/
+        - name: Training
+          url: training/
           weight: 3
         - name: Cooking
           url: cooking/
           weight: 4 
-        - name: Blog
-          url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
+        - name: Tennis
+          url: https://en.wikipedia.org/wiki/Tennis
+          weight: 5
+        - name: Japanese
+          url: https://en.wikipedia.org/wiki/Japanese_language
           weight: 6
+        - name: English
+          url: https://en.wikipedia.org/wiki/English_language
+          weight: 7
 
 params:
     description: "BI Engineer | Data Engineer | Tech Lead"
