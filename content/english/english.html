@@ -3,41 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C1 Interview Fluency - Flip Cards</title>
+    <title>C1 Data Leader - 50 Power Swaps</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --secondary: #64748b;
-            --bg: #f8fafc;
+            --primary: #1e293b;
+            --accent: #3b82f6;
+            --success: #10b981;
+            --bg: #f1f5f9;
             --card-front: #ffffff;
-            --card-back: #dbeafe;
+            --card-back: #eff6ff;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--bg);
+            color: var(--primary);
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 40px 20px;
+            margin: 0;
         }
 
-        h1 { color: var(--primary); margin-bottom: 10px; }
-        p { color: var(--secondary); margin-bottom: 30px; }
+        .header {
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--primary); }
+        .stats { font-weight: 600; color: var(--accent); margin-bottom: 20px; }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
             width: 100%;
-            max-width: 1000px;
+            max-width: 1200px;
         }
 
         .card {
-            background-color: transparent;
-            width: 100%;
-            height: 180px;
             perspective: 1000px;
+            height: 220px;
             cursor: pointer;
         }
 
@@ -45,11 +52,8 @@
             position: relative;
             width: 100%;
             height: 100%;
-            text-align: center;
-            transition: transform 0.6s;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             transform-style: preserve-3d;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            border-radius: 12px;
         }
 
         .card.is-flipped .card-inner {
@@ -60,109 +64,365 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 30px;
             box-sizing: border-box;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .card-front {
             background-color: var(--card-front);
-            color: var(--secondary);
         }
 
-        .card-front span {
-            font-size: 0.8rem;
+        .label {
+            font-size: 0.7rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 10px;
             color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .b2-text {
+            font-size: 1.2rem;
+            color: #64748b;
         }
 
         .card-back {
             background-color: var(--card-back);
-            color: var(--primary);
             transform: rotateY(180deg);
+            border: 2px solid var(--accent);
         }
 
-        .card-back .term {
+        .c1-text {
             font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 12px;
         }
 
-        .card-back .example {
-            font-size: 0.9rem;
-            font-style: italic;
+        .example {
+            font-size: 0.95rem;
+            line-height: 1.5;
             color: #1e40af;
+            font-style: italic;
         }
 
-        .controls {
-            margin-bottom: 20px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
+        .footer-nav {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #64748b;
         }
     </style>
 </head>
 <body>
 
-    <h1>Interview Power-Swaps</h1>
-    <p>Click a card to reveal the <strong>C1 Level</strong> equivalent and an example from your background.</p>
+    <div class="header">
+        <h1>C1 Interview Mastery</h1>
+        <div class="stats" id="counter">Progress: 0 / 50 Mastered</div>
+        <p>Replace your B2 vocabulary with 50 high-impact senior phrases. Click to flip.</p>
+    </div>
 
-    <div class="grid" id="cardGrid">
-        </div>
+    <div class="grid" id="cardGrid"></div>
+
+    <div class="footer-nav">
+        3-Day Sprint: Day 1 (Technical) | Day 2 (Leadership) | Day 3 (Strategy)
+    </div>
 
     <script>
-        // DATA SOURCE: You can add or edit words here easily
         const wordData = [
-            { b2: "Found a problem", c1: "Pinpointed a discrepancy", example: "I pinpointed a significant discrepancy in the GA tracking." },
-            { b2: "Fixed the error", c1: "Rectified the misconfiguration", example: "We rectified the misconfiguration within the data pipeline." },
-            { b2: "Started the project", c1: "Spearheaded the initiative", example: "I spearheaded the initiative to audit our marketing data." },
-            { b2: "Showed the money lost", c1: "Quantified the revenue impact", example: "I conducted an analysis to quantify the revenue impact of the missing data." },
-            { b2: "Finished the task", c1: "Carried out the analysis", example: "We carried out a deep-dive analysis on the campaign segments." },
-            { b2: "Helped the team", c1: "Empowered the stakeholders", example: "The new dashboard empowered stakeholders to make data-driven decisions." },
-            { b2: "Think of a plan", c1: "Strategize", example: "We had to strategize on how to align our data flow with the platform." },
-            { b2: "Solved the bugs", c1: "Ironed out the issues", example: "We eventually ironed out the tracking issues on the checkout page." },
-            { b2: "Explained details", c1: "Elaborated on the findings", example: "I elaborated on the findings during the monthly review." },
-            { b2: "Used SQL/Tools", c1: "Leveraged our tech stack", example: "We leveraged our tech stack to automate the validation process." }
-        ];
+    { 
+        b2: "Found the problem", 
+        c1: "Pinpointed the root cause / Identified the discrepancy", 
+        example: "1. We pinpointed the root cause within the ETL layer. <br>2. I identified a major discrepancy in our attribution model." 
+    },
+    { 
+        b2: "Fixed the error", 
+        c1: "Rectified the issue / Resolved the misconfiguration", 
+        example: "1. I rectified the issue by updating the API connection. <br>2. We resolved a critical misconfiguration in Google Analytics." 
+    },
+    { 
+        b2: "Led the project", 
+        c1: "Spearheaded the initiative / Orchestrated the project", 
+        example: "1. I spearheaded the initiative to improve tracking. <br>2. I orchestrated a cross-functional project to clean the data lake." 
+    },
+    { 
+        b2: "Managed people", 
+        c1: "Coordinated cross-functional teams / Supervised the execution", 
+        example: "1. I coordinated teams across Data and Marketing. <br>2. I supervised the technical execution of the new dashboard." 
+    },
+    { 
+        b2: "Used a tool", 
+        c1: "Leveraged the tech stack / Utilized the infrastructure", 
+        example: "1. We leveraged our tech stack to automate audits. <br>2. I utilized the cloud infrastructure to run complex queries." 
+    },
+    { 
+        b2: "Worked on", 
+        c1: "Executed the strategy / Undertook the assignment", 
+        example: "1. We executed the strategy within a tight window. <br>2. I undertook the assignment of auditing 50+ campaigns." 
+    },
+    { 
+        b2: "Helped the team", 
+        c1: "Empowered the stakeholders / Facilitated the process", 
+        example: "1. The report empowered stakeholders to act. <br>2. I facilitated the transition to a new BI platform." 
+    },
+    { 
+        b2: "Big change", 
+        c1: "Substantial transformation / Significant overhaul", 
+        example: "1. We saw a substantial transformation in data quality. <br>2. I led a significant overhaul of our reporting structure." 
+    },
+    { 
+        b2: "Told the boss", 
+        c1: "Briefed senior leadership / Advised the executive board", 
+        example: "1. I briefed senior leadership on the revenue risk. <br>2. I advised the board on our long-term data strategy." 
+    },
+    { 
+        b2: "Made it better", 
+        c1: "Optimized for performance / Enhanced the efficiency", 
+        example: "1. I optimized the queries for real-time speed. <br>2. We enhanced the efficiency of the data pipeline." 
+    },
+    { 
+        b2: "Checked data", 
+        c1: "Validated data integrity / Audited the datasets", 
+        example: "1. I validated the integrity of the migration. <br>2. I audited the datasets to ensure 99% accuracy." 
+    },
+    { 
+        b2: "Cleaned data", 
+        c1: "Sanitized the inputs / Refined the raw data", 
+        example: "1. We sanitized the datasets to remove noise. <br>2. I refined the raw data before feeding it into the model." 
+    },
+    { 
+        b2: "Put together", 
+        c1: "Aggregated complex data / Consolidated the sources", 
+        example: "1. I aggregated data from multiple APIs. <br>2. We consolidated five sources into a single source of truth." 
+    },
+    { 
+        b2: "Started a plan", 
+        c1: "Rolled out a solution / Implemented the framework", 
+        example: "1. We rolled out the solution incrementally. <br>2. I implemented a new framework for campaign tracking." 
+    },
+    { 
+        b2: "Explained", 
+        c1: "Elaborated on the nuances / Articulated the findings", 
+        example: "1. Let me elaborate on the technical nuances. <br>2. I articulated the findings to a non-technical audience." 
+    },
+    { 
+        b2: "Showed the cost", 
+        c1: "Quantified the financial impact / Assessed the loss", 
+        example: "1. I quantified the impact of the data leakage. <br>2. I assessed the potential loss of revenue." 
+    },
+    { 
+        b2: "Planned", 
+        c1: "Strategized the roadmap / Formulated a plan", 
+        example: "1. I strategized the roadmap for the BI team. <br>2. We formulated a plan to tackle the technical debt." 
+    },
+    { 
+        b2: "Solved conflict", 
+        c1: "Mitigated friction / Negotiated a consensus", 
+        example: "1. I mitigated friction by aligning team KPIs. <br>2. I negotiated a consensus between IT and Marketing." 
+    },
+    { 
+        b2: "Good result", 
+        c1: "Favorable outcome / Positive trajectory", 
+        example: "1. The fix resulted in a favorable outcome. <br>2. The project set our growth on a positive trajectory." 
+    },
+    { 
+        b2: "Simple / Easy", 
+        c1: "Straightforward / Streamlined", 
+        example: "1. The process was relatively straightforward. <br>2. We created a streamlined workflow for the team." 
+    },
+    { 
+        b2: "Hard / Difficult", 
+        c1: "Complex / Challenging / Onerous", 
+        example: "1. We navigated a highly complex architecture. <br>2. The manual audit was an onerous task." 
+    },
+    { 
+        b2: "Finished", 
+        c1: "Brought to fruition / Concluded the phase", 
+        example: "1. I brought the project to fruition. <br>2. We successfully concluded the testing phase." 
+    },
+    { 
+        b2: "Talked about", 
+        c1: "Addressed the concerns / Discussed the implications", 
+        example: "1. I addressed the concerns about privacy. <br>2. We discussed the implications of the data loss." 
+    },
+    { 
+        b2: "Took a task", 
+        c1: "Undertook the responsibility / Assumed ownership", 
+        example: "1. I undertook the server migration. <br>2. I assumed ownership of the tracking problem." 
+    },
+    { 
+        b2: "Looked at", 
+        c1: "Scrutinized the metrics / Audited the flow", 
+        example: "1. I scrutinized the metrics for anomalies. <br>2. I audited the flow to find the bottleneck." 
+    },
+    { 
+        b2: "Followed rules", 
+        c1: "Ensured compliance / Adhered to standards", 
+        example: "1. We ensured full compliance with GDPR. <br>2. I adhered to industry standards for security." 
+    },
+    { 
+        b2: "Made sure", 
+        c1: "Guaranteed scalability / Safeguarded the process", 
+        example: "1. The design guaranteed scalability. <br>2. We safeguarded the data during the transfer." 
+    },
+    { 
+        b2: "Gave work", 
+        c1: "Delegated technical tasks / Assigned priorities", 
+        example: "1. I delegated tasks to the seniors. <br>2. I assigned priorities based on business value." 
+    },
+    { 
+        b2: "Improved skills", 
+        c1: "Fostered professional growth / Cultivated talent", 
+        example: "1. I fostered growth through mentorship. <br>2. I cultivated talent within the analytics team." 
+    },
+    { 
+        b2: "Changed setup", 
+        c1: "Reconfigured the environment / Adjusted the parameters", 
+        example: "1. I reconfigured the cloud environment. <br>2. I adjusted the parameters of the model." 
+    },
+    { 
+        b2: "Discovered", 
+        c1: "Uncovered actionable insights / Detected patterns", 
+        example: "1. We uncovered insights that drove revenue. <br>2. I detected patterns in the tracking errors." 
+    },
+    { 
+        b2: "Keep doing", 
+        c1: "Maintain momentum / Sustain progress", 
+        example: "1. We want to maintain momentum. <br>2. I worked to sustain progress during the transition." 
+    },
+    { 
+        b2: "Connect / Link", 
+        c1: "Bridge the gap / Align the interests", 
+        example: "1. I bridged the gap between IT and Sales. <br>2. I aligned the interests of both departments." 
+    },
+    { 
+        b2: "Small details", 
+        c1: "Granular data points / Intricate details", 
+        example: "1. We analyzed data at a granular level. <br>2. I focused on the intricate details of the API." 
+    },
+    { 
+        b2: "Fast", 
+        c1: "Expedited / Accelerated", 
+        example: "1. We expedited the deployment. <br>2. I accelerated the data cleaning process." 
+    },
+    { 
+        b2: "Important", 
+        c1: "Pivotal / Critical / Paramount", 
+        example: "1. This was a pivotal moment for us. <br>2. Data accuracy is of paramount importance." 
+    },
+    { 
+        b2: "Every day", 
+        c1: "On a day-to-day basis / Systematically", 
+        example: "1. We monitor this on a day-to-day basis. <br>2. I systematically checked every campaign." 
+    },
+    { 
+        b2: "Try / Attempt", 
+        c1: "Strive to / Endeavor to", 
+        example: "1. We strive to maintain 99.9% uptime. <br>2. I endeavor to deliver the report early." 
+    },
+    { 
+        b2: "Result in", 
+        c1: "Yielded / Culminated in", 
+        example: "1. The project yielded high efficiency. <br>2. The audit culminated in a total redesign." 
+    },
+    { 
+        b2: "Focused on", 
+        c1: "Centered around / Pivoted toward", 
+        example: "1. Our strategy was centered around users. <br>2. We pivoted toward a more secure protocol." 
+    },
+    { 
+        b2: "Build", 
+        c1: "Construct / Architect / Engineer", 
+        example: "1. I helped architect the new lake. <br>2. I engineered a more robust tracking system." 
+    },
+    { 
+        b2: "Understand", 
+        c1: "Grasp the complexities / Comprehend the scope", 
+        example: "1. I grasped the complexities of the system. <br>2. I needed to comprehend the full scope." 
+    },
+    { 
+        b2: "Stop", 
+        c1: "Halt / Terminate / Cease", 
+        example: "1. We halted the process to save data. <br>2. We terminated the legacy connection." 
+    },
+    { 
+        b2: "Change / Move", 
+        c1: "Pivot / Shift the focus", 
+        example: "1. We decided to pivot our strategy. <br>2. I shifted the focus to data integrity." 
+    },
+    { 
+        b2: "Agree", 
+        c1: "Reach a consensus / Align perspectives", 
+        example: "1. We reached a consensus on the fix. <br>2. I helped align the perspectives of the team." 
+    },
+    { 
+        b2: "Look into", 
+        c1: "Investigate the feasibility / Probe into", 
+        example: "1. I investigated the feasibility of AI. <br>2. We probed into the logs to find the error." 
+    },
+    { 
+        b2: "Same as", 
+        c1: "Consistent with / Aligned with", 
+        example: "1. Results were consistent with forecasts. <br>2. The fix was aligned with our goals." 
+    },
+    { 
+        b2: "Use for first time", 
+        c1: "Pioneer / Inaugurate", 
+        example: "1. I pioneered the use of automation. <br>2. We inaugurated the new data policy." 
+    },
+    { 
+        b2: "Very much", 
+        c1: "Significantly / Considerably", 
+        example: "1. Accuracy improved significantly. <br>2. We reduced costs considerably." 
+    },
+    { 
+        b2: "Summary", 
+        c1: "High-level overview / Synopsis", 
+        example: "1. Let me provide a high-level overview. <br>2. Here is a brief synopsis of the project." 
+    }
+];
 
+        let masteredCount = 0;
         const grid = document.getElementById('cardGrid');
+        const counter = document.getElementById('counter');
 
         function createCards() {
-            wordData.forEach(item => {
+            wordData.forEach((item, index) => {
                 const card = document.createElement('div');
                 card.className = 'card';
-                card.onclick = () => card.classList.toggle('is-flipped');
-
                 card.innerHTML = `
                     <div class="card-inner">
                         <div class="card-front">
-                            <span>B2 Level (Simple)</span>
-                            <strong>${item.b2}</strong>
+                            <div class="label">B2 (Common) • Card ${index + 1}</div>
+                            <div class="b2-text">${item.b2}</div>
                         </div>
                         <div class="card-back">
-                            <div class="term">${item.c1}</div>
+                            <div class="label">C1 (Professional)</div>
+                            <div class="c1-text">${item.c1}</div>
                             <div class="example">"${item.example}"</div>
                         </div>
                     </div>
                 `;
+                
+                card.onclick = () => {
+                    if (!card.classList.contains('is-flipped')) {
+                        masteredCount++;
+                        updateCounter();
+                    }
+                    card.classList.toggle('is-flipped');
+                };
                 grid.appendChild(card);
             });
+        }
+
+        function updateCounter() {
+            counter.innerText = `Progress: ${Math.min(masteredCount, 50)} / 50 Mastered`;
         }
 
         window.onload = createCards;
