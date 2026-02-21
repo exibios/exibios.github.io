@@ -12,7 +12,7 @@ taxonomies:
 menu:
     main:
         - name: Curriculum Vitae
-          url: cv/
+          url: cv.pdf
           weight: 1 
         - name: Photography
           url: photo/
@@ -26,12 +26,15 @@ menu:
         - name: Tennis
           url: https://en.wikipedia.org/wiki/Tennis
           weight: 5
-        - name: Japanese
-          url: https://en.wikipedia.org/wiki/Japanese_language
+        - name: Swimming
+          url: https://en.wikipedia.org/wiki/Swimming
           weight: 6
+        - name: Japanese
+          url: nihongo/
+          weight: 7
         - name: English
           url: english/
-          weight: 7
+          weight: 8
 
 params:
     description: "Data Lead | BI & Data Engineering | Data Strategy | Cloud Data Architecture | AWS | GCP"
@@ -60,7 +63,7 @@ params:
     profileMode:
           enabled: true
           title: Franco Corona
-          subtitle: "Data Lead with 7+ years of experience in data architecture, business intelligence, and cloud platforms (GCP, AWS). I design and optimize scalable data solutions, migrating OnPrem systems to the cloud and reducing processing times from days to hours with cost savings of up to 4X. Specialist in data governance, KPI standardization, and data quality for strategic decision-making. I have led teams in companies such as Linio and Falabella, collaborating with cross-functional areas in e-commerce and retail. I combine leadership with hands-on execution in SQL, Python, Airflow, and BigQuery, promoting collaboration between technical and business teams. My goal is to build data-driven environments where strategy and technical excellence generate measurable impact on eﬃciency, visibility, and growth."
+          subtitle: "Data Lead with 8+ years of experience in data architecture, business intelligence, and cloud platforms (GCP, AWS). I design and optimize scalable data solutions, migrating OnPrem systems to the cloud and reducing processing times from days to hours with cost savings of up to 4X. Specialist in data governance, KPI standardization, and data quality for strategic decision-making. I have led teams in companies such as Linio and Falabella, collaborating with cross-functional areas in e-commerce and retail. I combine leadership with hands-on execution in SQL, Python, Airflow, and BigQuery, promoting collaboration between technical and business teams. My goal is to build data-driven environments where strategy and technical excellence generate measurable impact on eﬃciency, visibility, and growth."
           imageUrl: "picture.jpeg"
           imageWidth: 160
           imageHeight: 160
